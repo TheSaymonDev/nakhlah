@@ -11,6 +11,7 @@ TextStyle myTextStyle(double fSize, FontWeight fWeight, Color clr) {
     fontWeight: fWeight,
     color: clr,
     fontFamily: 'Gumela Arabic',
+    height: 1
   );
 }
 
@@ -78,5 +79,12 @@ DropdownButton<String> customDropDownButton(
     ),
     items: items,
     onChanged: onChanged,
+  );
+}
+
+BoxDecoration decorationStyle() {
+  return BoxDecoration(
+    borderRadius: BorderRadius.circular(12.r),
+    color: filledClr,
   );
 }

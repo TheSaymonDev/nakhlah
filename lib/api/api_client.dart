@@ -5,7 +5,6 @@ import 'package:task1/models/log_in_model.dart';
 import 'package:task1/models/registration_model.dart';
 import 'package:task1/reusable/styles.dart';
 import 'package:task1/screens/home_page.dart';
-import 'package:task1/screens/authentication_screens/mobile_number_page.dart';
 
 class ApiClient {
   static Future<void> registerUserPost(
@@ -21,11 +20,11 @@ class ApiClient {
     );
     if (response.statusCode == 200) {
       myToastMessage(message: 'Registration Successful');
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) =>  MobileNumberPage(),
-          ));
+      // Navigator.push(
+      //     context,
+      //     MaterialPageRoute(
+      //       builder: (context) =>  MobileNumberPage(),
+      //     ));
     } else {
       myToastMessage(message: 'Regitration Failed Please Try Again');
     }
@@ -43,11 +42,11 @@ class ApiClient {
     );
     if (response.statusCode == 200) {
       myToastMessage(message: 'Login Successful');
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) =>  MyHomePage(),
-          ));
+      // //Navigator.push(
+      //     context,
+      //     MaterialPageRoute(
+      //       builder: (context) =>  MyHomePage(),
+      //     ));
     } else {
       myToastMessage(message: 'Login Failed Please Regitration');
     }

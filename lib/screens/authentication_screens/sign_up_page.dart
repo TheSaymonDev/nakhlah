@@ -11,6 +11,7 @@ import 'package:task1/reusable/widgets/app_sign_in_with_button.dart';
 import 'package:task1/reusable/widgets/app_text_form_field.dart';
 import 'package:task1/reusable/widgets/app_yellow_button.dart';
 import 'package:task1/screens/authentication_screens/sign_in_page.dart';
+import 'package:task1/screens/home_and_profile_screens/bottom_nav_bar_page.dart';
 import 'package:task1/screens/home_page.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -90,7 +91,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         //   ApiClient.registerUserPost(
                         //       registrationModel, context);
                         // }
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage(),));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavBarPage(),));
                       },
                       buttonName: 'Sign up',
                     ),

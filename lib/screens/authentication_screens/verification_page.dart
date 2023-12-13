@@ -16,7 +16,9 @@ class VerificationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundClr,
-      appBar: appBarBack(onPressed: () {}),
+      appBar: appBarBack(onPressed: () {
+        Navigator.pop(context);
+      }),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 50.w),

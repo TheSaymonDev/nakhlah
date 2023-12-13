@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:task1/screens/authentication_screens/mobile_number_page.dart';
 import 'package:task1/screens/authentication_screens/reset_password_page.dart';
 import 'package:task1/screens/authentication_screens/sign_in_page.dart';
 import 'package:task1/screens/authentication_screens/sign_up_page.dart';
 import 'package:task1/screens/authentication_screens/verification_code_page.dart';
 import 'package:task1/screens/authentication_screens/verification_page.dart';
+import 'package:task1/screens/home_and_profile_screens/bottom_nav_bar_page.dart';
+import 'package:task1/screens/home_and_profile_screens/help_center_page.dart';
 import 'package:task1/screens/home_and_profile_screens/profile_update_page.dart';
 import 'package:task1/screens/home_page.dart';
 import 'package:task1/screens/onboarding_screens/onboarding_page.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child:  ProfileUpdatePage(),
+      child:  OnboardingPage(),
     );
   }
 }

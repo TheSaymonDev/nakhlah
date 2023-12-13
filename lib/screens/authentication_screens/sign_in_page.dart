@@ -11,7 +11,9 @@ import 'package:task1/reusable/widgets/app_sign_in_with_button.dart';
 import 'package:task1/reusable/widgets/app_text_form_field.dart';
 import 'package:task1/reusable/widgets/app_yellow_button.dart';
 import 'package:task1/screens/authentication_screens/forgot_password_page.dart';
+import 'package:task1/screens/authentication_screens/sign_up_page.dart';
 import 'package:task1/screens/authentication_screens/verification_page.dart';
+import 'package:task1/screens/home_and_profile_screens/bottom_nav_bar_page.dart';
 import 'package:task1/screens/home_page.dart';
 
 class SignInPage extends StatefulWidget {
@@ -96,7 +98,7 @@ class _SignInPageState extends State<SignInPage> {
                         //       password: _passwordController.text);
                         //   ApiClient.logInUserPost(logInModel, context);
                         // }
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage(),));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavBarPage(),));
                       },
                       buttonName: 'Sign in',
                     ),
@@ -132,7 +134,9 @@ class _SignInPageState extends State<SignInPage> {
                           style: myTextStyle(20.sp, FontWeight.normal, textClr),
                         ),
                         TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpPage(),));
+                            },
                             child: Text(
                               'Create Account',
                               style:

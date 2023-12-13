@@ -6,6 +6,7 @@ import 'package:task1/reusable/colors.dart';
 import 'package:task1/reusable/styles.dart';
 import 'package:task1/reusable/widgets/app_yellow_button.dart';
 import 'package:task1/screens/authentication_screens/reset_password_page.dart';
+import 'package:task1/screens/authentication_screens/successfully_page.dart';
 
 class VerificationCodePage extends StatelessWidget {
   VerificationCodePage({super.key});
@@ -15,7 +16,9 @@ class VerificationCodePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarBack(onPressed: () {}),
+      appBar: appBarBack(onPressed: () {
+        Navigator.pop(context);
+      }),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -64,7 +67,9 @@ class VerificationCodePage extends StatelessWidget {
                     style: myTextStyle(20.sp, FontWeight.normal, textClr),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        //Navigator.push(context, MaterialPageRoute(builder: (context) => SuccessfullyPage(),));
+                      },
                       child: Text(
                         'Resend Code',
                         style:

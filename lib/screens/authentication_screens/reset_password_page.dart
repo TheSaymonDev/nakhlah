@@ -6,6 +6,7 @@ import 'package:task1/reusable/styles.dart';
 import 'package:task1/reusable/validator.dart';
 import 'package:task1/reusable/widgets/app_text_form_field.dart';
 import 'package:task1/reusable/widgets/app_yellow_button.dart';
+import 'package:task1/screens/authentication_screens/successfully_page.dart';
 import 'package:task1/screens/home_page.dart';
 
 class ResetPasswordPage extends StatelessWidget {
@@ -18,7 +19,9 @@ class ResetPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundClr,
-      appBar: appBarBack(onPressed: () {}),
+      appBar: appBarBack(onPressed: () {
+        Navigator.pop(context);
+      }),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -69,7 +72,7 @@ class ResetPasswordPage extends StatelessWidget {
               ),
               Gap(60.h),
               AppYellowButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage(),));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SuccessfullyPage(),));
               }, buttonName: 'Continue'),
             ],
           ),

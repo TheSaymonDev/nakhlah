@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:task1/reusable/colors.dart';
 import 'package:task1/reusable/styles.dart';
 import 'package:task1/reusable/widgets/app_text_form_field.dart';
 import 'package:task1/reusable/widgets/app_yellow_button.dart';
+import 'package:task1/screens/home_and_profile_screens/help_center_page.dart';
 
 class ProfileUpdatePage extends StatefulWidget {
   const ProfileUpdatePage({super.key});
@@ -61,32 +63,38 @@ class _ProfileUpdatePageState extends State<ProfileUpdatePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: Stack(
-                  children: [
-                    Container(
-                      height: 115.h,
-                      width: 115.w,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('assets/images/profile-img.png'),
-                            fit: BoxFit.fitHeight),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HelpCenterPage(),
+                      ));
+                },
+                child: Center(
+                  child: Stack(
+                    children: [
+                      SvgPicture.asset(
+                        'assets/images/profile-img.svg',
+                        height: 115.h,
+                        width: 115.w,
+                        fit: BoxFit.fitHeight,
                       ),
-                    ),
-                    Positioned(
-                      right: 7,
-                      child: Container(
-                          height: 28.h,
-                          width: 28.w,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: greenClr),
-                          child: Icon(
-                            Icons.edit,
-                            color: backgroundClr,
-                            size: 18.sp,
-                          )),
-                    ),
-                  ],
+                      Positioned(
+                        right: 7,
+                        child: Container(
+                            height: 28.h,
+                            width: 28.w,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle, color: greenClr),
+                            child: Icon(
+                              Icons.edit,
+                              color: backgroundClr,
+                              size: 18.sp,
+                            )),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Text(
