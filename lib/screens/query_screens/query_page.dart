@@ -4,11 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:task1/reusable/colors.dart';
 import 'package:task1/reusable/widgets/app_yellow_button.dart';
 import 'package:task1/screens/authentication_screens/sign_up_page.dart';
-import 'package:task1/screens/home_page.dart';
-import 'package:task1/screens/query_screens/query_widgets/capacity_query.dart';
-import 'package:task1/screens/query_screens/query_widgets/language_query.dart';
-import 'package:task1/screens/query_screens/query_widgets/learning_goal_query.dart';
-import 'package:task1/screens/query_screens/query_widgets/learning_object_query.dart';
+import 'package:task1/screens/query_screens/query_pages/capacity_query.dart';
+import 'package:task1/screens/query_screens/query_pages/language_query.dart';
+import 'package:task1/screens/query_screens/query_pages/learning_goal_query.dart';
+import 'package:task1/screens/query_screens/query_pages/learning_object_query.dart';
+
+
 
 class QueryPage extends StatefulWidget {
   const QueryPage({super.key});

@@ -5,7 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:task1/models/leader_board_model.dart';
 import 'package:task1/reusable/colors.dart';
 import 'package:task1/reusable/styles.dart';
-import 'package:task1/reusable/widgets/app_custom_app_bar.dart';
+
 
 class UserProfilePage extends StatelessWidget {
   UserProfilePage({Key? key}) : super(key: key);

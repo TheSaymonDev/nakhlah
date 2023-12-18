@@ -4,11 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:task1/reusable/colors.dart';
 import 'package:task1/reusable/styles.dart';
-import 'package:task1/screens/home_and_profile_screens/bottom_nav_bar_pages/home_page.dart';
-import 'package:task1/screens/home_and_profile_screens/bottom_nav_bar_pages/leader_board_page.dart';
-import 'package:task1/screens/home_and_profile_screens/bottom_nav_bar_pages/target_page.dart';
-import 'package:task1/screens/home_and_profile_screens/bottom_nav_bar_pages/game_page.dart';
-import 'package:task1/screens/home_and_profile_screens/bottom_nav_bar_pages/user_profile.dart';
+import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_pages/game_page.dart';
+import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_pages/home_page.dart';
+import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_pages/leader_board_page.dart';
+import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_pages/target_page.dart';
+import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_pages/user_profile_page.dart';
+
 
 class BottomNavBarPage extends StatefulWidget {
   const BottomNavBarPage({super.key});

@@ -5,14 +5,14 @@ import 'package:task1/models/faq_questions_model.dart';
 import 'package:task1/reusable/colors.dart';
 import 'package:task1/reusable/styles.dart';
 
-class Faq extends StatefulWidget {
-  Faq({super.key});
+class FaqHelp extends StatefulWidget {
+  FaqHelp({super.key});
 
   @override
-  State<Faq> createState() => _FaqState();
+  State<FaqHelp> createState() => _FaqHelpState();
 }
 
-class _FaqState extends State<Faq> {
+class _FaqHelpState extends State<FaqHelp> {
   final _searchController = TextEditingController();
 
   bool _customTileExpanded = false;

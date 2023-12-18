@@ -1,15 +1,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gap/gap.dart';
 import 'package:task1/reusable/colors.dart';
 import 'package:task1/reusable/styles.dart';
-import 'package:task1/reusable/widgets/app_custom_app_bar.dart';
-import 'package:task1/screens/leader_board_screen/bronze.dart';
-import 'package:task1/screens/leader_board_screen/gold.dart';
-import 'package:task1/screens/leader_board_screen/platinum.dart';
-import 'package:task1/screens/leader_board_screen/silver.dart';
-import 'package:task1/screens/leader_board_screen/titanium.dart';
+import 'package:task1/screens/leader_board_screens/bronze_level.dart';
+import 'package:task1/screens/leader_board_screens/gold_level.dart';
+import 'package:task1/screens/leader_board_screens/platinum_level.dart';
+import 'package:task1/screens/leader_board_screens/silver_level.dart';
+import 'package:task1/screens/leader_board_screens/titanium_level.dart';
+
+
 
 class LeaderBoardPage extends StatefulWidget {
   const LeaderBoardPage({super.key});
@@ -27,7 +27,7 @@ class _LeaderBoardPageState extends State<LeaderBoardPage> with SingleTickerProv
     super.initState();
   }
 
-  final List<Widget> _tabItemList = [const Bronze(), const Silver(), const Titanium(), const Gold(), const Platinum()];
+  final List<Widget> _tabItemList = [const BronzeLevel(), const SilverLevel(), const TitaniumLevel(), const GoldLevel(), const PlatinumLevel()];
 
   @override
   Widget build(BuildContext context) {

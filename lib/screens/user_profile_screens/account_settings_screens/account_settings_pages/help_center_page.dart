@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task1/reusable/colors.dart';
 import 'package:task1/reusable/styles.dart';
-import 'package:task1/screens/home_and_profile_screens/help_center_widgets/contact_us.dart';
-import 'package:task1/screens/home_and_profile_screens/help_center_widgets/faq.dart';
+import 'package:task1/screens/user_profile_screens/account_settings_screens/account_settings_pages/help_center_pages/contact_us_help.dart';
+import 'package:task1/screens/user_profile_screens/account_settings_screens/account_settings_pages/help_center_pages/faq_help.dart';
+
 
 class HelpCenterPage extends StatefulWidget {
-  HelpCenterPage({super.key});
+  const HelpCenterPage({super.key});
 
   @override
   State<HelpCenterPage> createState() => _HelpCenterPageState();
@@ -21,7 +22,7 @@ class _HelpCenterPageState extends State<HelpCenterPage> with SingleTickerProvid
     super.initState();
   }
 
-  final List<Widget> _tabItemList=[ Faq(),  ContactUs()];
+  final List<Widget> _tabItemList=[ FaqHelp(),  ContactUsHelp()];
 
   @override
   Widget build(BuildContext context) {

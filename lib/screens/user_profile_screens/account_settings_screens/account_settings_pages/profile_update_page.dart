@@ -6,7 +6,8 @@ import 'package:task1/reusable/colors.dart';
 import 'package:task1/reusable/styles.dart';
 import 'package:task1/reusable/widgets/app_text_form_field.dart';
 import 'package:task1/reusable/widgets/app_yellow_button.dart';
-import 'package:task1/screens/home_and_profile_screens/help_center_page.dart';
+import 'package:task1/screens/user_profile_screens/account_settings_screens/account_settings_pages/help_center_page.dart';
+
 
 class ProfileUpdatePage extends StatefulWidget {
   const ProfileUpdatePage({super.key});

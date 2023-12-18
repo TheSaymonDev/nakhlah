@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-class Platinum extends StatelessWidget {
-  const Platinum({Key? key}) : super(key: key);
+class GoldLevel extends StatelessWidget {
+  const GoldLevel({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

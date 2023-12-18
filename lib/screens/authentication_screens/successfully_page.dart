@@ -4,7 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:task1/reusable/colors.dart';
 import 'package:task1/reusable/styles.dart';
 import 'package:task1/reusable/widgets/app_yellow_button.dart';
-import 'package:task1/screens/home_and_profile_screens/bottom_nav_bar_page.dart';
+import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_page.dart';
 
 class SuccessfullyPage extends StatelessWidget {
   const SuccessfullyPage({super.key});

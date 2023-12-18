@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-class Bronze extends StatelessWidget {
-  const Bronze({super.key});
+class BronzeLevel extends StatelessWidget {
+  const BronzeLevel({super.key});
 
   @override
   Widget build(BuildContext context) {

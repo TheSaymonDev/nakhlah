@@ -10,11 +10,9 @@ import 'package:task1/reusable/widgets/app_divider_or.dart';
 import 'package:task1/reusable/widgets/app_sign_in_with_button.dart';
 import 'package:task1/reusable/widgets/app_text_form_field.dart';
 import 'package:task1/reusable/widgets/app_yellow_button.dart';
-import 'package:task1/screens/authentication_screens/forgot_password_page.dart';
 import 'package:task1/screens/authentication_screens/sign_up_page.dart';
 import 'package:task1/screens/authentication_screens/verification_page.dart';
-import 'package:task1/screens/home_and_profile_screens/bottom_nav_bar_page.dart';
-import 'package:task1/screens/home_page.dart';
+import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_page.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -62,7 +60,7 @@ class _SignInPageState extends State<SignInPage> {
                     AppTextFormField(
                       hintText: 'Password',
                       controller: _passwordController,
-                      validator: identifierValidator,
+                      validator: passwordValidator,
                       suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {

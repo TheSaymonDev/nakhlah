@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:task1/reusable/colors.dart';
 import 'package:task1/reusable/styles.dart';
-import 'package:task1/reusable/widgets/app_custom_app_bar.dart';
-import 'package:task1/screens/home_and_profile_screens/target_widgets/daily.dart';
-import 'package:task1/screens/home_and_profile_screens/target_widgets/monthly.dart';
+import 'package:task1/screens/target_screens/daily_target.dart';
+import 'package:task1/screens/target_screens/monthly_target.dart';
+
 
 class TargetPage extends StatefulWidget {
   TargetPage({super.key});

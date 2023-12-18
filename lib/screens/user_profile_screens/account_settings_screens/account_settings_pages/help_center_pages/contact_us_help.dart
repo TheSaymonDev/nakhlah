@@ -5,8 +5,8 @@ import 'package:gap/gap.dart';
 import 'package:task1/reusable/colors.dart';
 import 'package:task1/reusable/styles.dart';
 
-class ContactUs extends StatelessWidget {
-  const ContactUs({Key? key}) : super(key: key);
+class ContactUsHelp extends StatelessWidget {
+  const ContactUsHelp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
