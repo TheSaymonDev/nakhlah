@@ -2,14 +2,15 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:task1/reusable/colors.dart';
-import 'package:task1/reusable/styles.dart';
-import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_pages/game_page.dart';
-import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_pages/home_page.dart';
-import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_pages/leader_board_page.dart';
-import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_pages/target_page.dart';
-import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_pages/user_profile_page.dart';
-
+import 'package:get/get.dart';
+import 'package:nakhlah_education_app/reusable/colors.dart';
+import 'package:nakhlah_education_app/reusable/styles.dart';
+import 'package:nakhlah_education_app/screens/game_screen/game_page.dart';
+import 'package:nakhlah_education_app/screens/home_screen/home_page.dart';
+import 'package:nakhlah_education_app/screens/leader_board_screen/leader_board_page.dart';
+import 'package:nakhlah_education_app/screens/settings_screen/account_settings_page.dart';
+import 'package:nakhlah_education_app/screens/target_screens/target_page.dart';
+import 'package:nakhlah_education_app/screens/account_screen/account_page.dart';
 
 class BottomNavBarPage extends StatefulWidget {
   const BottomNavBarPage({super.key});
@@ -19,14 +20,13 @@ class BottomNavBarPage extends StatefulWidget {
 }
 
 class _BottomNavBarPageState extends State<BottomNavBarPage> {
-
   int _currentIndex = 0;
-  List<Widget> _navItemList = [
+  final List<Widget> _pageList = [
     HomePage(),
-    LeaderBoardPage(),
-    TargetPage(),
-    GamePage(),
-    UserProfilePage()
+    const LeaderBoardPage(),
+    const TargetPage(),
+    const GamePage(),
+    const AccountPage()
   ];
 
   @override
@@ -34,8 +34,9 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
     return Scaffold(
       backgroundColor: backgroundClr,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 1,
+        backgroundColor: backgroundClr,
+        elevation: 0,
+        centerTitle: true,
         automaticallyImplyLeading: false,
         // leading: _currentIndex > 0
         //     ? IconButton(
@@ -57,21 +58,32 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
           style: myTextStyle(30.sp, FontWeight.bold, greenClr),
         ),
         actions: [
-         _currentIndex==4?IconButton(onPressed: (){}, icon: Icon(Icons.settings, size: 30.sp, color: textClr,)):  Padding(
-           padding: EdgeInsets.only(right: 8.w),
-           child: IconButton(
-             onPressed: () {},
-             icon: SvgPicture.asset(
-               'assets/images/profile-img.svg',
-               height: 35.h,
-               width: 35.w,
-               fit: BoxFit.fill,
-             ),
-           ),
-         )
+          _currentIndex == 4
+              ? IconButton(
+                  onPressed: () {
+                    Get.to(()=>const AccountSettingsPage());
+                  },
+                  icon: Icon(
+                    Icons.settings,
+                    size: 30.sp,
+                    color: textClr,
+                  ),
+                )
+              : Padding(
+                  padding: EdgeInsets.only(right: 8.w),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: SvgPicture.asset(
+                      'assets/images/profile-img.svg',
+                      height: 35.h,
+                      width: 35.w,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                )
         ],
       ),
-      body: _navItemList.elementAt(_currentIndex),
+      body: _pageList.elementAt(_currentIndex),
       // bottomNavigationBar: Card(
       //   color: filledClr,
       //   elevation: 4,
@@ -146,12 +158,22 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
       //   ),
       // ),
       bottomNavigationBar: ConvexAppBar(
-        items: [
-          TabItem(icon: Icons.home_filled,),
-          TabItem(icon: Icons.leaderboard_rounded,),
-          TabItem(icon: Icons.next_plan_rounded,),
-          TabItem(icon: Icons.gamepad_rounded,),
-          TabItem(icon: Icons.person_2,),
+        items: const [
+          TabItem(
+            icon: Icons.home_filled,
+          ),
+          TabItem(
+            icon: Icons.leaderboard_rounded,
+          ),
+          TabItem(
+            icon: Icons.next_plan_rounded,
+          ),
+          TabItem(
+            icon: Icons.gamepad_rounded,
+          ),
+          TabItem(
+            icon: Icons.person,
+          ),
         ],
         initialActiveIndex: _currentIndex,
         onTap: (int index) {

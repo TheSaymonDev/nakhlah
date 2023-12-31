@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:task1/reusable/colors.dart';
+import 'package:nakhlah_education_app/reusable/colors.dart';
 
 class AppQueryContainer extends StatelessWidget {
   const AppQueryContainer({super.key, required this.imgUrl});

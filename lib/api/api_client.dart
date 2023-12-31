@@ -1,10 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:task1/models/log_in_model.dart';
-import 'package:task1/models/registration_model.dart';
-import 'package:task1/reusable/styles.dart';
-import 'package:task1/screens/home_page.dart';
+import 'package:nakhlah_education_app/models/log_in_model.dart';
+import 'package:nakhlah_education_app/models/registration_model.dart';
+import 'package:nakhlah_education_app/reusable/styles.dart';
 
 class ApiClient {
   static Future<void> registerUserPost(

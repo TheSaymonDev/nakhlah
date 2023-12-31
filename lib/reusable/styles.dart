@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:task1/reusable/colors.dart';
+import 'package:nakhlah_education_app/reusable/colors.dart';
 
 TextStyle myTextStyle(double fSize, FontWeight fWeight, Color clr) {
   return TextStyle(
@@ -53,13 +53,13 @@ PinTheme pinTheme() {
   return PinTheme(
     shape: PinCodeFieldShape.box,
     borderRadius: BorderRadius.circular(5.r),
-    borderWidth: 4.w,
+    borderWidth: 2.w,
     inactiveFillColor: filledClr,
     selectedFillColor: backgroundClr,
-    fieldHeight: 60.h,
-    fieldWidth: 60.w,
+    fieldHeight: 55.h,
+    fieldWidth: 55.w,
     activeColor: Colors.black,
-    selectedColor: Colors.blue,
+    selectedColor: greenClr,
     inactiveColor: Colors.black,
   );
 }

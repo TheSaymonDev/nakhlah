@@ -1,15 +1,16 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
+import 'package:nakhlah_education_app/reusable/colors.dart';
+import 'package:nakhlah_education_app/reusable/styles.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_yellow_button.dart';
+import 'package:nakhlah_education_app/screens/authentication_screens/sign_in_page.dart';
+import 'package:nakhlah_education_app/screens/authentication_screens/sign_up_page.dart';
+import 'package:nakhlah_education_app/screens/query_screens/query_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:task1/reusable/colors.dart';
-import 'package:task1/reusable/styles.dart';
-import 'package:task1/reusable/widgets/app_yellow_button.dart';
-import 'package:task1/screens/authentication_screens//sign_up_page.dart';
-import 'package:task1/screens/authentication_screens/sign_in_page.dart';
-import 'package:task1/screens/query_screens/query_page.dart';
+
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -27,8 +28,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
     return Scaffold(
       backgroundColor: backgroundClr,
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.only(bottom: 30.h),
+        child: Container(
+          height: double.infinity.h,
+          width: double.infinity.w,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -40,7 +42,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      SvgPicture.asset('assets/images/app-logo.svg', height: 244.h, width: 244.w, fit: BoxFit.cover,),
+                      Container(
+                        height: 244.h,
+                        width: 244.w,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(image: AssetImage('assets/images/app-logo.png'), fit: BoxFit.cover)
+                        ),
+                      ),
                       Gap(130.h),
                       Text(
                         'Start Your Journey',
@@ -80,14 +88,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 onDotClicked: (index) => setState(() => _currentPage = index),
               ),
               const Spacer(),
-              AppYellowButton(
+              CustomYellowButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => QueryPage(),
-                    ),
-                  );
+                 Get.to(()=>const QueryPage());
                 },
                 buttonName: 'Get Start',
               ),
@@ -96,17 +99,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Dont have an accounts?',
+                    "Don't have an accounts?",
                     style: myTextStyle(20.sp, FontWeight.normal, textClr),
                   ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const SignUpPage(),
-                        ),
-                      );
+                  Gap(8.w),
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(()=>const SignUpPage());
                     },
                     child: Text(
                       'Create Account',
@@ -123,14 +122,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     'Already have account?',
                     style: myTextStyle(20.sp, FontWeight.normal, textClr),
                   ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const SignInPage(),
-                        ),
-                      );
+                  Gap(8.w),
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(()=>const SignInPage());
                     },
                     child: Text(
                       'Login',
@@ -139,6 +134,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   ),
                 ],
               ),
+              Gap(25.h),
             ],
           ),
         ),

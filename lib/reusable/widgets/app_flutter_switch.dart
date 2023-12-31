@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:task1/reusable/colors.dart';
+import 'package:nakhlah_education_app/reusable/colors.dart';
 
 class AppFlutterSwitch extends StatelessWidget {
   AppFlutterSwitch({super.key, required this.onToggle, required this.value});

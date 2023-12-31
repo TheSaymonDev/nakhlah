@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:task1/reusable/colors.dart';
-import 'package:task1/reusable/styles.dart';
+import 'package:nakhlah_education_app/reusable/colors.dart';
+import 'package:nakhlah_education_app/reusable/styles.dart';
 
 class AppQueryText extends StatelessWidget {
   const AppQueryText({super.key, required this.name});

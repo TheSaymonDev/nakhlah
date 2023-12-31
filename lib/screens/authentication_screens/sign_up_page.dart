@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:task1/api/api_client.dart';
-import 'package:task1/models/registration_model.dart';
-import 'package:task1/reusable/colors.dart';
-import 'package:task1/reusable/styles.dart';
-import 'package:task1/reusable/validator.dart';
-import 'package:task1/reusable/widgets/app_divider_or.dart';
-import 'package:task1/reusable/widgets/app_sign_in_with_button.dart';
-import 'package:task1/reusable/widgets/app_text_form_field.dart';
-import 'package:task1/reusable/widgets/app_yellow_button.dart';
-import 'package:task1/screens/authentication_screens/sign_in_page.dart';
-import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_page.dart';
-import 'package:task1/screens/home_page.dart';
+import 'package:get/get.dart';
+import 'package:nakhlah_education_app/reusable/colors.dart';
+import 'package:nakhlah_education_app/reusable/styles.dart';
+import 'package:nakhlah_education_app/reusable/validator.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_divider_or.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_sign_in_with_button.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_text_form_field.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_yellow_button.dart';
+import 'package:nakhlah_education_app/screens/authentication_screens/sign_in_page.dart';
+import 'package:nakhlah_education_app/screens/bottom_nav_bar_screens/bottom_nav_bar_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -52,19 +50,19 @@ class _SignUpPageState extends State<SignUpPage> {
                       style: myTextStyle(25.sp, FontWeight.bold, textClr),
                     ),
                     Gap(60.h),
-                    AppTextFormField(
+                    CustomTextFormField(
                       hintText: 'Name',
                       controller: _nameController,
                       validator: nameValidator,
                     ),
                     Gap(20.h),
-                    AppTextFormField(
+                    CustomTextFormField(
                       hintText: 'Email',
                       controller: _emailController,
                       validator: emailValidator,
                     ),
                     Gap(20.h),
-                    AppTextFormField(
+                    CustomTextFormField(
                       hintText: 'Password',
                       controller: _passwordController,
                       validator: passwordValidator,
@@ -81,7 +79,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       obscureText: isObscure,
                     ),
                     Gap(20.h),
-                    AppYellowButton(
+                    CustomYellowButton(
                       onPressed: () {
                         // if (_formKey.currentState!.validate()) {
                         //   final registrationModel = RegistrationModel(
@@ -91,34 +89,34 @@ class _SignUpPageState extends State<SignUpPage> {
                         //   ApiClient.registerUserPost(
                         //       registrationModel, context);
                         // }
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavBarPage(),));
+                       Get.to(()=>const BottomNavBarPage());
                       },
                       buttonName: 'Sign up',
                     ),
                     Gap(25.h),
-                    const AppDividerOr(),
+                    const CustomDividerOr(),
                     Gap(25.h),
-                    AppSignInWithButton(
+                    CustomSignInWithButton(
                         onPressed: () {
                           myToastMessage(message: 'Continue with Facebook');
                         },
                         imgUrl: 'assets/images/facebook.svg',
                         name: 'Continue with Facebook'),
                     Gap(10.h),
-                    AppSignInWithButton(
+                    CustomSignInWithButton(
                         onPressed: () {
                           myToastMessage(message: 'Continue with Twitter');
                         },
                         imgUrl: 'assets/images/twitter.svg',
                         name: 'Continue with Twitter'),
                     Gap(10.h),
-                    AppSignInWithButton(
+                    CustomSignInWithButton(
                         onPressed: () {
                           myToastMessage(message: 'Continue with Google');
                         },
                         imgUrl: 'assets/images/google.svg',
                         name: 'Continue with Google'),
-                    Gap(25.h),
+                    Gap(40.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -126,15 +124,17 @@ class _SignUpPageState extends State<SignUpPage> {
                           'Already have account?',
                           style: myTextStyle(20.sp, FontWeight.normal, textClr),
                         ),
-                        TextButton(
-                            onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => SignInPage(),));
-                            },
-                            child: Text(
-                              'Login',
-                              style:
-                              myTextStyle(25.sp, FontWeight.bold, greenClr),
-                            )),
+                        Gap(8.w),
+                        GestureDetector(
+                          onTap: (){
+                            Get.to(()=>const SignInPage());
+                          },
+                          child: Text(
+                            'Login',
+                            style:
+                            myTextStyle(25.sp, FontWeight.bold, greenClr),
+                          ),
+                        ),
                       ],
                     ),
                   ],

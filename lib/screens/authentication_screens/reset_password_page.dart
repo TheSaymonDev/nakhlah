@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:task1/reusable/colors.dart';
-import 'package:task1/reusable/styles.dart';
-import 'package:task1/reusable/validator.dart';
-import 'package:task1/reusable/widgets/app_text_form_field.dart';
-import 'package:task1/reusable/widgets/app_yellow_button.dart';
-import 'package:task1/screens/authentication_screens/successfully_page.dart';
-import 'package:task1/screens/home_page.dart';
+import 'package:get/get.dart';
+import 'package:nakhlah_education_app/reusable/colors.dart';
+import 'package:nakhlah_education_app/reusable/styles.dart';
+import 'package:nakhlah_education_app/reusable/validator.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_appbar/appbar_textview_with_back.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_text_form_field.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_yellow_button.dart';
+import 'package:nakhlah_education_app/screens/authentication_screens/successfully_page.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   ResetPasswordPage({super.key});
@@ -19,9 +20,7 @@ class ResetPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundClr,
-      appBar: appBarBack(onPressed: () {
-        Navigator.pop(context);
-      }),
+      appBar: AppbarTextviewWithBack(onPressedBack: (){Get.back();}),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -38,14 +37,14 @@ class ResetPasswordPage extends StatelessWidget {
                 'Reset Password',
                 style: myTextStyle(25.sp, FontWeight.bold, textClr),
               ),
-              Gap(96.h),
+              Gap(80.h),
               Align(
                   alignment: Alignment.topLeft,
                   child: Text(
                     'New password',
                     style: myTextStyle(25.sp, FontWeight.normal, textClr),
                   )),
-              AppTextFormField(
+              CustomTextFormField(
                 hintText: '*********',
                 controller: _newPasswordController,
                 validator: passwordValidator,
@@ -57,7 +56,7 @@ class ResetPasswordPage extends StatelessWidget {
                     'Confirm New password',
                     style: myTextStyle(25.sp, FontWeight.normal, textClr),
                   )),
-              AppTextFormField(
+              CustomTextFormField(
                 hintText: '*********',
                 controller: _confirmPasswordController,
                 validator: passwordValidator,
@@ -71,8 +70,8 @@ class ResetPasswordPage extends StatelessWidget {
                 ),
               ),
               Gap(60.h),
-              AppYellowButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SuccessfullyPage(),));
+              CustomYellowButton(onPressed: () {
+                Get.to(()=>const SuccessfullyPage());
               }, buttonName: 'Continue'),
             ],
           ),

@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:task1/api/api_client.dart';
-import 'package:task1/models/log_in_model.dart';
-import 'package:task1/reusable/colors.dart';
-import 'package:task1/reusable/styles.dart';
-import 'package:task1/reusable/validator.dart';
-import 'package:task1/reusable/widgets/app_divider_or.dart';
-import 'package:task1/reusable/widgets/app_sign_in_with_button.dart';
-import 'package:task1/reusable/widgets/app_text_form_field.dart';
-import 'package:task1/reusable/widgets/app_yellow_button.dart';
-import 'package:task1/screens/authentication_screens/sign_up_page.dart';
-import 'package:task1/screens/authentication_screens/verification_page.dart';
-import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_page.dart';
+import 'package:get/get.dart';
+import 'package:nakhlah_education_app/api/api_client.dart';
+import 'package:nakhlah_education_app/models/log_in_model.dart';
+import 'package:nakhlah_education_app/reusable/colors.dart';
+import 'package:nakhlah_education_app/reusable/styles.dart';
+import 'package:nakhlah_education_app/reusable/validator.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_divider_or.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_sign_in_with_button.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_text_form_field.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_yellow_button.dart';
+import 'package:nakhlah_education_app/screens/authentication_screens/reset_password_page.dart';
+import 'package:nakhlah_education_app/screens/authentication_screens/sign_up_page.dart';
+import 'package:nakhlah_education_app/screens/authentication_screens/verification_page.dart';
+import 'package:nakhlah_education_app/screens/bottom_nav_bar_screens/bottom_nav_bar_page.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -50,14 +52,14 @@ class _SignInPageState extends State<SignInPage> {
                       'Login',
                       style: myTextStyle(25.sp, FontWeight.bold, textClr),
                     ),
-                    Gap(85.h),
-                    AppTextFormField(
+                    Gap(70.h),
+                    CustomTextFormField(
                       hintText: 'Email or username or pho...',
                       controller: _identifierController,
                       validator: identifierValidator,
                     ),
                     Gap(20.h),
-                    AppTextFormField(
+                    CustomTextFormField(
                       hintText: 'Password',
                       controller: _passwordController,
                       validator: passwordValidator,
@@ -75,20 +77,20 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     Gap(15.h),
                     Container(
-                      alignment: Alignment.centerRight,
                       width: 318.w,
-                      child: TextButton(
-                          onPressed: () {
-                            //myToastMessage(message: 'Forgot Password Called');
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => VerificationPage(),));
-                          },
-                          child: Text(
-                            'Forgot Password',
-                            style: myTextStyle(25.sp, FontWeight.normal, textClr),
-                          )),
+                      alignment: Alignment.centerRight,
+                      child: GestureDetector(
+                        onTap: (){
+                          Get.to(()=>VerificationPage());
+                        },
+                        child: Text(
+                          'Forgot Password?',
+                          style: myTextStyle(25.sp, FontWeight.normal, textClr),
+                        ),
+                      ),
                     ),
                     Gap(20.h),
-                    AppYellowButton(
+                    CustomYellowButton(
                       onPressed: () {
                         // if (_formKey.currentState!.validate()) {
                         //   final logInModel = LogInModel(
@@ -96,28 +98,28 @@ class _SignInPageState extends State<SignInPage> {
                         //       password: _passwordController.text);
                         //   ApiClient.logInUserPost(logInModel, context);
                         // }
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavBarPage(),));
+                        Get.to(()=>const BottomNavBarPage());
                       },
                       buttonName: 'Sign in',
                     ),
                     Gap(25.h),
-                    const AppDividerOr(),
+                    const CustomDividerOr(),
                     Gap(45.h),
-                    AppSignInWithButton(
+                    CustomSignInWithButton(
                         onPressed: () {
                           myToastMessage(message: 'Continue with Facebook');
                         },
                         imgUrl: 'assets/images/facebook.svg',
                         name: 'Continue with Facebook'),
                     Gap(10.h),
-                    AppSignInWithButton(
+                    CustomSignInWithButton(
                         onPressed: () {
                           myToastMessage(message: 'Continue with Twitter');
                         },
                         imgUrl: 'assets/images/twitter.svg',
                         name: 'Continue with Twitter'),
                     Gap(10.h),
-                    AppSignInWithButton(
+                    CustomSignInWithButton(
                         onPressed: () {
                           myToastMessage(message: 'Continue with Google');
                         },
@@ -128,18 +130,20 @@ class _SignInPageState extends State<SignInPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Dont have an account?',
+                          "Don't have an account?",
                           style: myTextStyle(20.sp, FontWeight.normal, textClr),
                         ),
-                        TextButton(
-                            onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpPage(),));
-                            },
-                            child: Text(
-                              'Create Account',
-                              style:
-                              myTextStyle(25.sp, FontWeight.bold, greenClr),
-                            )),
+                        Gap(8.w),
+                        GestureDetector(
+                          onTap: (){
+                            Get.to(()=>const SignUpPage());
+                          },
+                          child: Text(
+                            'Create Account',
+                            style:
+                            myTextStyle(25.sp, FontWeight.bold, greenClr),
+                          ),
+                        ),
                       ],
                     ),
                   ],

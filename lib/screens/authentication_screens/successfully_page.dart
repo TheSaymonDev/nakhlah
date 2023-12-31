@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:task1/reusable/colors.dart';
-import 'package:task1/reusable/styles.dart';
-import 'package:task1/reusable/widgets/app_yellow_button.dart';
-import 'package:task1/screens/bottom_nav_bar_screens/bottom_nav_bar_page.dart';
+import 'package:get/get.dart';
+import 'package:nakhlah_education_app/reusable/colors.dart';
+import 'package:nakhlah_education_app/reusable/styles.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_yellow_button.dart';
+import 'package:nakhlah_education_app/screens/bottom_nav_bar_screens/bottom_nav_bar_page.dart';
 
 class SuccessfullyPage extends StatelessWidget {
   const SuccessfullyPage({super.key});
@@ -12,6 +13,7 @@ class SuccessfullyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundClr,
       body: SafeArea(
         child: SizedBox(
           height: double.infinity,
@@ -26,8 +28,8 @@ class SuccessfullyPage extends StatelessWidget {
               Gap(28.h),
               Text('Your Password has been changed successfully', style: myTextStyle(20.sp, FontWeight.normal, textClr),),
               const Spacer(),
-              AppYellowButton(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const BottomNavBarPage(),));
+              CustomYellowButton(onPressed: (){
+                Get.to(()=>const BottomNavBarPage());
               }, buttonName: 'Done'),
               Gap(40.h),
             ],

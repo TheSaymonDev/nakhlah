@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:task1/reusable/colors.dart';
-import 'package:task1/reusable/styles.dart';
-import 'package:task1/reusable/widgets/app_yellow_button.dart';
-import 'package:task1/screens/authentication_screens/reset_password_page.dart';
-import 'package:task1/screens/authentication_screens/successfully_page.dart';
+import 'package:nakhlah_education_app/reusable/colors.dart';
+import 'package:nakhlah_education_app/reusable/styles.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_appbar/appbar_textview_with_back.dart';
+import 'package:nakhlah_education_app/reusable/widgets/custom_yellow_button.dart';
+import 'package:nakhlah_education_app/screens/authentication_screens/reset_password_page.dart';
+import 'package:nakhlah_education_app/screens/authentication_screens/successfully_page.dart';
 
 class VerificationCodePage extends StatelessWidget {
   VerificationCodePage({super.key});
@@ -16,13 +18,12 @@ class VerificationCodePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarBack(onPressed: () {
-        Navigator.pop(context);
-      }),
+      backgroundColor: backgroundClr,
+      appBar: AppbarTextviewWithBack(onPressedBack: (){Get.back();}),
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 15.w),
+        padding: EdgeInsets.symmetric(horizontal: 25.w),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -35,7 +36,7 @@ class VerificationCodePage extends StatelessWidget {
                 'Enter verification code',
                 style: myTextStyle(30.sp, FontWeight.bold, textClr),
               ),
-              Gap(96.h),
+              Gap(80.h),
               Text(
                 'We sent a 6 digit code to 88********69',
                 style: myTextStyle(20.sp, FontWeight.normal, textClr),
@@ -46,8 +47,7 @@ class VerificationCodePage extends StatelessWidget {
                 length: 6,
                 obscureText: false,
                 animationType: AnimationType.fade,
-                animationDuration: Duration(milliseconds: 300),
-               // enableActiveFill: true,
+                animationDuration: const Duration(milliseconds: 300),
                 pinTheme: pinTheme(),
                 onCompleted: (v) {
                 },
@@ -55,26 +55,26 @@ class VerificationCodePage extends StatelessWidget {
                 },
               ),
               Gap(35.h),
-              AppYellowButton(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ResetPasswordPage(),));
+              CustomYellowButton(onPressed: (){
+                Get.to(()=>ResetPasswordPage());
               }, buttonName: 'Continue'),
               Gap(32.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Didnt received a code?',
+                    "Didn't received a code?",
                     style: myTextStyle(20.sp, FontWeight.normal, textClr),
                   ),
-                  TextButton(
-                      onPressed: () {
-                        //Navigator.push(context, MaterialPageRoute(builder: (context) => SuccessfullyPage(),));
-                      },
-                      child: Text(
-                        'Resend Code',
-                        style:
-                        myTextStyle(25.sp, FontWeight.bold, greenClr),
-                      )),
+                  Gap(8.w),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Text(
+                      'Resend Code',
+                      style:
+                      myTextStyle(25.sp, FontWeight.bold, greenClr),
+                    ),
+                  ),
                 ],
               ),
             ],
